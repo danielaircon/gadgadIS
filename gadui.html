@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAD Information System</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        color: white; 
+    }
+    #header {
+        background-color: #6c4fa2;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #header h1 {
+        margin: 0;
+    }
+    #header ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    #header ul li {
+        margin-right: 10px;
+    }
+    #header ul li a {
+        color: white; 
+        text-decoration: none; 
+    }
+    .carousel {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+    }
+    .carousel-inner {
+        display: flex;
+        flex-wrap: wrap; 
+    }
+    .card {
+        background-color: #6c4fa2; 
+        border-radius: 5px;
+        padding: 20px;
+        margin: 10px;
+        width: 300px;
+        text-align: center;
+        position: relative;
+        flex: 1;
+    }
+    .card img {
+        width: 200px; 
+        height: 200px; 
+        object-fit: cover;
+        border-radius: 50%; 
+        margin-bottom: 20px;
+    }
+    .btn {
+        background-color: purple;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+    }
+    .know-your-rights {
+        text-align: center;
+        font-weight: bold;
+        color: black;
+        font-size: 40px; 
+    }
+    .description {
+        text-align: center;
+        color: gray; 
+    }
+    .graph-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        margin-top: 20px;
+        padding-left: 450px;
+        max-width: 50%;
+    }
+    canvas {
+        margin-bottom: 20px;
+        width: 300px; 
+        height: 200px; 
+    }
+</style>
+</head>
+<body>
+
+<div id="header">
+    <h1>gadIS</h1>
+    <ul>
+        <li><a href="#statistics">Statistics</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+    </ul>
+</div>
+
+<p class="know-your-rights">KNOW YOUR RIGHTS!</p>
+<p class="description">Understanding these rights empowers women to assert themselves in various aspects of life, including education, employment, healthcare, and personal relationships. Moreover, knowing women's rights facilitates the creation of supportive communities and policies that uphold and advance gender equality. Ultimately, it fosters a society where women can live free from discrimination and oppression, contributing fully to social, economic, and political development.</p>
+
+<div class="carousel">
+    <div class="carousel-inner">
+        <div class="card">
+            <img src="gadphotos/sexharact.jpg" alt="Survey 1">
+            <h2>RA 7877</h2>
+            <p>ANTI SEXUAL HARASSMENT ACT OF 1995.</p>
+            <a href="antisexactsurv.html" target="_blank" class="btn">Take the Survey</a>
+        </div>
+        <div class="card">
+            <img src="gadphotos/safespace.png" alt="Survey 2">
+            <h2>RA 11313</h2>
+            <p>SAFE SPACES ACT.</p>
+            <a href="safespaceactsurv.html" target="_blank" class="btn">Take the Survey</a>
+        </div>
+        <div class="card">
+            <img src="gadphotos/magnacart.png" alt="Survey 3">
+            <h2>RA 9710</h2>
+            <p>MAGNA CARTA OF WOMEN.</p>
+            <a href="magnacartsurv.html" target="_blank" class="btn">Take the Survey</a>
+        </div>
+        <div class="card">
+            <img src="gadphotos/vawc.png" alt="Survey 4">
+            <h2>RA 9262</h2>
+            <p>ANTI-VIOLENCE AGAINST WOMEN AND THEIR CHILDREN.</p>
+            <a href="antiviosurv.html" target="_blank" class="btn">Take the Survey</a>
+        </div>
+    </div>
+</div>
+
+<div class="graph-container" id="statistics">
+    <canvas id="graph1"></canvas>
+    <canvas id="graph2"></canvas>
+</div>
+
+<script>
+/*SAMPLE DATA LANG PO*/
+const datasets = [
+    {
+        label: 'Graph 1',
+        data: [10, 20, 15, 25, 30, 35],
+        borderColor: 'blue',
+        backgroundColor: 'rgba(0, 0, 255, 0.1)',
+        borderWidth: 1
+    },
+    {
+        label: 'Graph 2',
+        data: [25, 20, 30, 15, 10, 5],
+        borderColor: 'red',
+        backgroundColor: 'rgba(255, 0, 0, 0.1)',
+        borderWidth: 1
+    },
+];
+
+
+const options = {
+    scales: {
+        y: {
+            beginAtZero: true
+        }
+    }
+};
+
+
+for (let i = 0; i < datasets.length; i++) {
+    const canvasId = 'graph' + (i + 1);
+    const ctx = document.getElementById(canvasId).getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+            datasets: [datasets[i]]
+        },
+        options: options
+    });
+}
+</script>
+
+</body>
+</html>

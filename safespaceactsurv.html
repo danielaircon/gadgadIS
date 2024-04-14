@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safe Space Act Survey</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        color: white; 
+    }
+    #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; 
+    }
+    #header {
+        background-color: #6c4fa2;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #header h1 {
+        margin: 0;
+        color: white;
+    }
+    #header ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    #header ul li {
+        margin-right: 10px;
+    }
+    #header ul li a {
+        color: white; 
+        text-decoration: none; 
+    }
+    .know-your-rights {
+        text-align: center;
+        font-weight: bold;
+        color: #000;
+        font-size: 40px; 
+        margin-top: 30px;
+    }
+    .description {
+        text-align: center;
+        color: gray;
+        margin-bottom: 30px; 
+    }
+    canvas {
+        margin-bottom: 20px;
+        width: 300px; 
+        height: 200px; 
+    }
+    form {
+        width: 80%;
+        margin: auto;
+        background-color: #6c4fa2;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    fieldset {
+        border: none;
+    }
+    legend {
+        font-size: 24px;
+        color: white;
+        margin-bottom: 20px;
+    }
+    label {
+        color: white;
+        font-size: 18px;
+    }
+    input[type="email"],
+    input[type="number"],
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+    input[type="submit"] {
+        background-color: #c09eff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        width: auto;
+    }
+    input[type="radio"] {
+        display: none;
+    }
+    .likert-label {
+        display: inline-block;
+        width: 30px;
+        text-align: center;
+        cursor: pointer;
+        margin-right: 10px; 
+    }
+    .likert-circle {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        margin: 0 5px;
+        transition: background-color 0.3s ease;
+    }
+    input[type="radio"]:checked + .likert-label .likert-circle {
+        background-color: #fff;
+    }
+</style>
+</head>
+<body>
+
+<div id="header">
+    <h1>gadIS</h1>
+    <ul>
+        <li><a href="gadui.html">Homes</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+    </ul>
+</div>
+
+<p class="know-your-rights">Anti-Sexual Harassment Act and Safe Spaces Act (11313)</p>
+<p class="description">Please take the time to answer the following survey. This is a survey on the level of awareness of respondents on RA11313 or Safe Spaces Act. Please Choose one NUMBER for every question that corresponds to your level of awareness for the subject referred to. 1 being the least level of awareness and 5 being the highest level of awareness. 1 to 2.5 Low Awareness   2.6 to 3.5 Moderate Awareness   3.6 to 5 High Awareness</p>
+
+<form>
+  <fieldset>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <div>
+        <label for="sex">Sex:</label><br>
+        <select id="sex" name="sex">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+
+      <label for="age">Age:</label><br>
+      <input type="number" id="age" name="age" required><br><br>
+      
+      <script>
+      document.getElementById("age").addEventListener("input", function() {
+          if (this.value < 0) {
+              this.value = "";
+          }
+      });
+      </script>
+
+    <p>Please take the time to answer the following survey. This is a survey on the level of awareness of respondents on RA11313 or Safe Spaces Act. Please choose one NUMBER for every question that corresponds to your level of awareness for the subject referred to. 1 being the least level of awareness and 5 being the highest level of awareness.</p>
+
+    <div>
+      <label for="q1">1. I am aware that cat-calling, stalking, and other acts that threaten one's personal space and safety committed in public spaces are punishable under this Act.</label><br>
+      <div>
+        <input type="radio" id="q1_1" name="q1" value="1">
+        <label class="likert-label" for="q1_1"><div class="likert-circle"></div>1</label>
+        <input type="radio" id="q1_2" name="q1" value="2">
+        <label class="likert-label" for="q1_2"><div class="likert-circle"></div>2</label>
+        <input type="radio" id="q1_3" name="q1" value="3">
+        <label class="likert-label" for="q1_3"><div class="likert-circle"></div>3</label>
+        <input type="radio" id="q1_4" name="q1" value="4">
+        <label class="likert-label" for="q1_4"><div class="likert-circle"></div>4</label>
+        <input type="radio" id="q1_5" name="q1" value="5">
+        <label class="likert-label" for="q1_5"><div class="likert-circle"></div>5</label>
+      </div>
+    </div>
+
+    <div>
+      <label for="q2">2. I am aware that motive is insignificant when punished for any sexual harassment I commit or I receive in any public space.</label><br>
+      <div>
+        <input type="radio" id="q2_1" name="q2" value="1">
+        <label class="likert-label" for="q2_1"><div class="likert-circle"></div>1</label>
+        <input type="radio" id="q2_2" name="q2" value="2">
+        <label class="likert-label" for="q2_2"><div class="likert-circle"></div>2</label>
+        <input type="radio" id="q2_3" name="q2" value="3">
+        <label class="likert-label" for="q2_3"><div class="likert-circle"></div>3</label>
+        <input type="radio" id="q2_4" name="q2" value="4">
+        <label class="likert-label" for="q2_4"><div class="likert-circle"></div>4</label>
+        <input type="radio" id="q2_5" name="q2" value="5">
+        <label class="likert-label" for="q2_5"><div class="likert-circle"></div>5</label>
+      </div>
+    </div>
+
+    <div>
+      <label for="q3">3. I am aware that sexual harassment committed online are punishable under this act.</label><br>
+      <div>
+        <input type="radio" id="q3_1" name="q3" value="1">
+        <label class="likert-label" for="q3_1"><div class="likert-circle"></div>1</label>
+        <input type="radio" id="q3_2" name="q3" value="2">
+        <label class="likert-label" for="q3_2"><div class="likert-circle"></div>2</label>
+        <input type="radio" id="q3_3" name="q3" value="3">
+        <label class="likert-label" for="q3_3"><div class="likert-circle"></div>3</label>
+        <input type="radio" id="q3_4" name="q3" value="4">
+        <label class="likert-label" for="q3_4"><div class="likert-circle"></div>4</label>
+        <input type="radio" id="q3_5" name="q3" value="5">
+        <label class="likert-label" for="q3_5"><div class="likert-circle"></div>5</label>
+      </div>
+    </div>
+  
+    <div>
+      <label for="q4">4. I am aware that males can be victims too under this Act.</label><br>
+      <div>
+        <input type="radio" id="q4_1" name="q4" value="1">
+        <label class="likert-label" for="q4_1"><div class="likert-circle"></div>1</label>
+        <input type="radio" id="q4_2" name="q4" value="2">
+        <label class="likert-label" for="q4_2"><div class="likert-circle"></div>2</label>
+        <input type="radio" id="q4_3" name="q4" value="3">
+        <label class="likert-label" for="q4_3"><div class="likert-circle"></div>3</label>
+        <input type="radio" id="q4_4" name="q4" value="4">
+        <label class="likert-label" for="q4_4"><div class="likert-circle"></div>4</label>
+        <input type="radio" id="q4_5" name="q4" value="5">
+        <label class="likert-label" for="q4_5"><div class="likert-circle"></div>5</label>
+      </div>
+    </div>
+
+    <div>
+      <label for="q5">5. I am aware that any sexual harassment I commit or I receive while in a Public Utlity Vehicle is punishable under this Act.</label><br>
+      <div>
+        <input type="radio" id="q5_1" name="q5" value="1">
+        <label class="likert-label" for="q5_1"><div class="likert-circle"></div>1</label>
+        <input type="radio" id="q5_2" name="q5" value="2">
+        <label class="likert-label" for="q5_2"><div class="likert-circle"></div>2</label>
+        <input type="radio" id="q5_3" name="q5" value="3">
+        <label class="likert-label" for="q5_3"><div class="likert-circle"></div>3</label>
+        <input type="radio" id="q5_4" name="q5" value="4">
+        <label class="likert-label" for="q5_4"><div class="likert-circle"></div>4</label>
+        <input type="radio" id="q5_5" name="q5" value="5">
+        <label class="likert-label" for="q5_5"><div class="likert-circle"></div>5</label>
+      </div>
+    </div>
+
+    <div>
+        <label for="department">Department:</label><br>
+        <select id="department" name="department">
+          <option value="CCST">CCST</option>
+          <option value="BPED">BPED</option>
+          <option value="CHK">CHK</option>
+          <option value="BSBA">BSBA</option>
+        </select>
+      </div>
+
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+
+</body>
+</html>
